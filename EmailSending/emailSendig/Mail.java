@@ -25,7 +25,7 @@ public class Mail {
 		properties.put("mail.smtp.host", "smtp.gmail.com");
 		properties.put("mail.smtp.port", "587");
 		
-		
+		//Enter your mail and password here from which to send
 		String MyAccountEmail = "YourMail";
 		String password = "Your Password";
 		
@@ -51,13 +51,13 @@ private static Message prepareMessage(Session session, String MyAccountEmail, St
 			try {
 				message.setFrom(new InternetAddress(MyAccountEmail));
 				message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
-				message.setSubject("vfgrt");
+				message.setSubject("My Email App");
 				
 				String[] splittedArray = recepient.split("@");
 				String name = splittedArray[0];
 				System.out.println(name);
 				
-				message.setText("Dear " +name+"\n Welcome to my bulk email application");
+				message.setText("Dear " +name+",\n Welcome to my bulk email application");
 				
 				
 			} catch(Exception e) {
